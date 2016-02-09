@@ -7,6 +7,10 @@ public class Address {
 	private String state;
 	private String pincode;
 	
+	public Address() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	public String getStreetname() {
 		return streetname;
 	}
