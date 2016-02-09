@@ -1,0 +1,47 @@
+% !TEX root = btstack_gettingstarted.tex
+\section{Protocols and Profiles}
+\label{section:protocols_profiles}
+\begin{figure}[htbp] %  figure placement: here, top, bottom, or page
+   \centering
+   \includegraphics[width=0.7\textwidth]{picts/btstack-protocols.pdf} 
+   \caption{\todo{BTstack Protocol Architecture - update}}
+   \label{fig:BTstackProtocolArchitecture}
+\end{figure}
+
+\pagebreak
+BTstack implements a subset of Bluetooth protocols and profiles that can be utilized in:
+\begin{itemize}
+\item Classic Bluetooth applications
+\item Low Energy (LE) Bluetooth applications
+\item Dual-mode applications (using both Classic and LE technologies) 
+\item Made for iPhone applications (MFi)
+\end{itemize}
+ 
+The Basic Rate/Extended Data Rate (BR/EDR) technology, also known as Classic Bluetooth, provides  a robust wireless connection between devices designed for high data rate transfer. In addition, it is associated with high connection setup latency, and high power consumption. The applications range from headsets and cars to industrial controllers. 
+
+The Low Energy (LE) is a very different then the Classic Bluetooth. This technology is used for discovering services and optimized for low power consumption - you don't get high data rates,   and usually don't keep connection for long periods, but the connection setup is quick and the power consumption is low. It is aimed for the healthcare like heart rate monitor, various fitness trackers, security like location beacons, and home entertainment like light control.
+
+The most popular BTstack's dual mode applications are accessories that want to talk to both iOS and Android devices. The Android OS offers decent API for SPP, but support for LE is not supported on all devices. The iOS has excellent LE API, and service similar to SPP can be used only after engaging into MFi program.
+
+As depicted in Figure \ref{fig:BTstackProtocolArchitecture}, BTstack implements following Bluetooth technologies:
+\begin{itemize}
+\item Classic Bluetooth:
+	\begin{itemize}
+	\item protocols: HCI, L2CAP, RFCOMM, SDP, BNEP
+	\item profiles: SPP, PAN (PAN User (PANU))
+	\end{itemize}
+\item Bluetooth Low Energy:
+	\begin{itemize}
+	\item protocols: L2CAP-LE, SMP, ATT
+	\item profiles: GATT
+	\end{itemize}
+\end{itemize}
+
+In the following, we provide an overview of the supported protocols and profiles.
+
+\include{bluetooth_classic}
+\include{bluetooth_low_energy}
+
+\subsection{Dual Mode Support}
+\subsection{Made For iPhone Support}
+
